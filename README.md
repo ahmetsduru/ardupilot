@@ -158,3 +158,21 @@ for reviewing patches on their specific area.
   - ***Subsystem***: ESP32,AP_HAL_ESP32
 - [Charles Villard ](https://github.com/Silvanosky):
   - ***Subsystem***: ESP32,AP_HAL_ESP32
+
+Contrubutions by me:
+
+# ArduPilot Custom Firmware for Mini Pixhawk
+
+This repository contains a customized version of the ArduPilot firmware specifically modified to enable `GUIDED_NOGPS` mode for the Mini Pixhawk. Follow the instructions below to activate the `GUIDED_NOGPS` mode.
+
+## Enabling GUIDED_NOGPS Mode
+
+To enable the `GUIDED_NOGPS` mode in ArduPilot, you'll need to make a small modification to the source code. Here are the steps:
+
+### 1. Clone the Repository
+
+First, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/ardupilot.git
+cd ardupilot
