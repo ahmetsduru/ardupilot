@@ -159,8 +159,6 @@ for reviewing patches on their specific area.
 - [Charles Villard ](https://github.com/Silvanosky):
   - ***Subsystem***: ESP32,AP_HAL_ESP32
 
-Contrubutions by me:
-
 # ArduPilot Custom Firmware for Mini Pixhawk
 
 This repository contains a customized version of the ArduPilot firmware specifically modified to enable `GUIDED_NOGPS` mode for the Mini Pixhawk. Follow the instructions below to activate the `GUIDED_NOGPS` mode.
@@ -169,20 +167,26 @@ This repository contains a customized version of the ArduPilot firmware specific
 
 To enable the `GUIDED_NOGPS` mode in ArduPilot, you'll need to make a small modification to the source code. Here are the steps:
 
-### 1. Clone the Repository
-
-First, clone the repository to your local machine:
-
 ```bash
-cd ardupilot
-cd libraries/AP_HAL_ChibiOS/hwdef/include/
-nano minimize_common.inc
-#define MODE_GUIDED_NOGPS_ENABLED 1
+# 1. Clone the Repository
 git clone https://github.com/ahmetsduru/ardupilot.git
 cd ardupilot
 git submodule update --init --recursive
+
+# 2. Edit the `minimize_common.inc` File
+cd libraries/AP_HAL_ChibiOS/hwdef/include/
+nano minimize_common.inc
+
+# In the file, uncomment and modify the line to enable GUIDED_NOGPS mode:
+#define MODE_GUIDED_NOGPS_ENABLED 1
+
+# Save the file and exit the editor.
+
+# 3. Build the Firmware
 ./waf configure --board mini-pix
 ./waf copter
 
-Once the build process is complete, the .apj file will be located in the build directory within your ArduPilot repository. The exact path will be something like this:
+# 4. Locate the .apj File
+# Once the build process is complete, the .apj file will be located in the build directory within your ArduPilot repository. 
+# The exact path will be something like this:
 ardupilot/build/fmuv3/bin/arducopter.apj
