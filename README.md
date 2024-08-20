@@ -174,8 +174,15 @@ To enable the `GUIDED_NOGPS` mode in ArduPilot, you'll need to make a small modi
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/ardupilot.git
 cd ardupilot
 cd libraries/AP_HAL_ChibiOS/hwdef/include/
 nano minimize_common.inc
 #define MODE_GUIDED_NOGPS_ENABLED 1
+git clone https://github.com/ahmetsduru/ardupilot.git
+cd ardupilot
+git submodule update --init --recursive
+./waf configure --board mini-pix
+./waf copter
+
+Once the build process is complete, the .apj file will be located in the build directory within your ArduPilot repository. The exact path will be something like this:
+ardupilot/build/fmuv3/bin/arducopter.apj
