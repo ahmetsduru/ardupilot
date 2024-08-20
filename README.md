@@ -189,4 +189,4 @@ nano minimize_common.inc
 # 4. Locate the .apj File
 # Once the build process is complete, the .apj file will be located in the build directory within your ArduPilot repository. 
 # The exact path will be something like this:
-ardupilot/build/fmuv3/bin/arducopter.apj
+ardupilot/build/mini-pix/bin/arducopter.apj
