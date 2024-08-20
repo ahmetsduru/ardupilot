@@ -177,3 +177,5 @@ First, clone the repository to your local machine:
 git clone https://github.com/your-username/ardupilot.git
 cd ardupilot
 cd libraries/AP_HAL_ChibiOS/hwdef/include/
+nano minimize_common.inc
+#define MODE_GUIDED_NOGPS_ENABLED 1
